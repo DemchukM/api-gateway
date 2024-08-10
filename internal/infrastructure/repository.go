@@ -24,8 +24,8 @@ func (repo *InMemoryUserRepository) GetById(id int) (*domain.User, error) {
 
 func (repo *InMemoryUserRepository) Create(user *domain.User) (int, error) {
 	id := repo.nextId
-	user.id = id
+	user.ID = id
 	repo.users[id] = user
 	repo.nextId++
-	return id, null
+	return id, nil
 }

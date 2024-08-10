@@ -3,7 +3,7 @@ package domain
 import "errors"
 
 type User struct {
-	id    int
+	ID    int
 	login string
 }
 

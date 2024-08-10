@@ -18,9 +18,9 @@ func NewUserHandler(useCase *usecase.UserUseCase) *UserHandler {
 
 func (h *UserHandler) GetUser(w http.ResponseWriter, r *http.Request) {
 	idStr := r.URL.Query().Get("id")
-	id, _ = strconv.Atoi(idStr)
+	ID, _ := strconv.Atoi(idStr)
 
-	user, err := h.useCase.GetUserById(id)
+	user, err := h.useCase.GetUserById(ID)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
